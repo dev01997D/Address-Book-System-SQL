@@ -61,3 +61,12 @@ update address_book_table set address='Jharkhand' where firstname='Devnandan' or
 ```
 update address_book_table set address='Jharkhand', city='Hazaribagh'  where firstname='Suraj' and lastname='Kumar';
 ```
+## UC5 - Delete the contact where it meets criteria
+### delete a single record
+```
+delete from address_book_table where firstname='Dev' and lastname='Sahab';
+```
+### Show tables after deletion
+```
+select * from address_book_table;
+```
