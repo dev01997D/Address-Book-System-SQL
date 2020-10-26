@@ -33,4 +33,23 @@ show tables;
 ```
 desc address_book_table;
 ```
+### Show the complete CREATE TABLE statement used by MySQL to create this table
+```
+show create table address_book_table;
+```
+## UC3 - Insert new contacts to address book table
+### Insert a row with all the column values
+```
+insert into address_book_table values( 'Devnandan', 'Kumar', 'Hazaribagh', 'Barhi', 787075, 'devnandan01997@gmail.com');
+insert into address_book_table values( 'Suraj', 'Kumar', 'Hazaribagh', 'Barhi', 987456, 'sraj014@gmail.com');
+```
+### Insert multiple rows in one command
+```
+insert into address_book_table values( 'Dev', 'Sahab', 'Jharkhand', 'hazaribagh', 879700, 'devsahab01997@gmail.com'),
+     ('Mohan', 'Thala', 'Ranchi', 'kanta-toli', 829496, 'mohan546@gmail.com');
+```
+### Show all the contents of table
+```
+select * from address_book_table;
+```
 
