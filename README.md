@@ -74,3 +74,7 @@ select * from address_book_table;
 ```
 select * from address_book_table where city='Hazaribagh' and address='Jharkhand';
 ```
+## UC7 - Understand size of address_book_table by city and state
+```
+select city as 'CITY', address as 'STATE' , count(*) as 'COUNT' from address_book_table group by city, address;
+```
