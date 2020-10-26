@@ -52,4 +52,12 @@ insert into address_book_table values( 'Dev', 'Sahab', 'Jharkhand', 'hazaribagh'
 ```
 select * from address_book_table;
 ```
-
+## UC4 - Ability to edit existing contacts
+### Modify selected rows
+```
+update address_book_table set address='Jharkhand' where firstname='Devnandan' or firstname='Mohan';
+```
+### Modify more than one values in given contact
+```
+update address_book_table set address='Jharkhand', city='Hazaribagh'  where firstname='Suraj' and lastname='Kumar';
+```
