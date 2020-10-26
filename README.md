@@ -70,3 +70,7 @@ delete from address_book_table where firstname='Dev' and lastname='Sahab';
 ```
 select * from address_book_table;
 ```
+## UC6 - Retrieve contact for given state and city
+```
+select * from address_book_table where city='Hazaribagh' and address='Jharkhand';
+```
