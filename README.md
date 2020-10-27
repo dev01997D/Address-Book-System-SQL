@@ -78,3 +78,8 @@ select * from address_book_table where city='Hazaribagh' and address='Jharkhand'
 ```
 select city as 'CITY', address as 'STATE' , count(*) as 'COUNT' from address_book_table group by city, address;
 ```
+## UC8 - Retrieve data sorted alphabetically on name for a given city
+```
+select * from address_book_table
+     where city='Hazaribagh' order by firstname;
+```
