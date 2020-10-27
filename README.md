@@ -106,3 +106,8 @@ update address_book_table
 ```
  select * from address_book_table;
 ```
+## UC10 - Find number of contacts by its type
+```
+ select count(*) as FAMILY_COUNT from address_book_table
+     where type='familyLog';
+```
