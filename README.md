@@ -111,3 +111,18 @@ update address_book_table
  select count(*) as FAMILY_COUNT from address_book_table
      where type='familyLog';
 ```
+## UC11 - Add persons to both family and friends
+### Adding person to family
+```
+ insert into address_book_table
+    values ('Nirmal', 'Kumar', 'Bihar', 'Patna', 958477, 'nirmal@gmail.com', 'family', 'familyLog');
+```
+### Adding person to friends
+```
+ insert into address_book_table
+    values ('Bibhuti', 'Rajan', 'Bihar', 'Chatra', 945687, 'bibhuti@gmail.com', 'friends', 'friendsLog');
+```
+### Checking the update in table
+```
+ select * from address_book_table;
+```
