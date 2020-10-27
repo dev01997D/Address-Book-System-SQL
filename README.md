@@ -83,3 +83,26 @@ select city as 'CITY', address as 'STATE' , count(*) as 'COUNT' from address_boo
 select * from address_book_table
      where city='Hazaribagh' order by firstname;
 ```
+## UC9 - Add type and name for each address book
+### Add familyLog as type and name as family for some contacts
+```
+ update address_book_table
+     set TYPE='familyLog' , NAME='family'
+     where firstname='Devnandan' or firstname='Dev';
+```
+### Add friendsLog as type and name as friends for some contacts
+```
+ update address_book_table
+     set TYPE='friendsLog' , NAME='friends'
+     where firstname='Mohan';
+```
+### Add professionLog as type and name as profession for some contacts
+``` 
+update address_book_table
+     set TYPE='professionLog' , NAME='profession'
+     where firstname='Suraj';
+```
+### Check the updates in table
+```
+ select * from address_book_table;
+```
