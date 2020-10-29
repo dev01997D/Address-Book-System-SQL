@@ -126,3 +126,25 @@ update address_book_table
 ```
  select * from address_book_table;
 ```
+## UC12 - Creating ER diagram
+### Creating Contact table
+```
+ create table Contact
+    -> (
+    -> firstName varchar(50) not null,
+    -> lastName varchar(50) not null,
+    -> Address varchar(150) not null,
+    -> city varchar(50) not null,
+    -> PhoneNumber int unsigned not null,
+    -> Email varchar(50) not null primary key
+    -> Address_Book_Name varchar(50) not null foreign key references address_book(Address_Book_Name)
+    -> );
+```
+### Creating table address_book
+```
+ create table address_book
+    -> (
+    -> Address_Book_Name varchar(50) not null primary key,
+    -> Type varchar(50) not null
+    -> );
+```
