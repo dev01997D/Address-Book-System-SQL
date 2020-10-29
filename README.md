@@ -140,11 +140,48 @@ update address_book_table
     -> Address_Book_Name varchar(50) not null foreign key references address_book(Address_Book_Name)
     -> );
 ```
-### Creating table address_book
+### Creating table address_book_dict
 ```
- create table address_book
+ create table address_book_dict
     -> (
     -> Address_Book_Name varchar(50) not null primary key,
     -> Type varchar(50) not null
     -> );
+```
+## UC13 - 
+### Inserting data into contact table
+```
+  insert into Contact values
+     ('Dev', 'Kumar', 'Jharkhand', 'Hazaribagh', 7870752948, 'devk@gmail.com', 'Personal');
+     ('Nandan', 'raj', 'Bihar', 'Patna', 8265478955, 'nandank@gmail.com', 'Casual'),
+     ('Mohana', 'kavya', 'T.S.', 'HYD', 9784595425, 'mohana@gmail.com', 'Professional'),
+     ('Sai', 'Deeksha', 'T.S', 'HYD',  78459745645, 'deeksha@gmail.com', 'Professional'),
+     ('Saurabh', 'Harale', 'A.P', 'HYD', 7845123690, 'saurabh@gmail.com', 'Casual'),
+     ('Manoj', 'Kumar', 'Jharkhand', 'Ranchi', 987456320, 'manoj@gmail.com', 'Personal');
+```
+### Insert data into address_book_dict
+```
+insert into address_book_dict values
+('Professional' , 'peers'),
+('Personal', 'family'),
+('Casual', 'friends);
+```
+### Retrieving Contacts for given city or state
+```
+select * from Contact left join address_book_dict using (Address_Book_Name) where city = 'HYD';
+ select * from Contact left join address_book_dict using (Address_Book_Name) where Address = 'T.S';
+```
+### Understanding the size of address book by City and State
+```
+SELECT city,COUNT(*) as COUNT FROM contact left join address_book_dict using (Address_Book_Name) GROUP BY city;
+SELECT Address,COUNT(*) as COUNT FROM contact left join address_book_dict using (Address_Book_Name) GROUP BY Address;
+```
+### Retrieve entries sorted alphabetically by Person’s name for a given city and state
+```
+select * from Contact left join address_book_dict using (Address_Book_Name) order by city asc;
+select * from Contact left join address_book_dict using (Address_Book_Name) order by Address asc;
+```
+### Ability to get number of contact persons(count by its type)
+```
+SELECT type, COUNT(*) as COUNT FROM address_book_dict right join Contact using (Address_Book_Name) GROUP BY type;
 ```
